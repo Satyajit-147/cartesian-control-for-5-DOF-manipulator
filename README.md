@@ -18,7 +18,7 @@ To run the Cartesian control simulation/hardware, you will need to open **four s
 Before starting, ensure your underlying MoveIt 2 installation is sourced, then build and source your workspace.
 
 **Terminal 1:**
-bash
+```bash
 # Source the main ROS 2 and MoveIt 2 underlay (adjust path if your MoveIt2 source is different)
 source /opt/ros/humble/setup.bash 
 
@@ -30,25 +30,25 @@ colcon build
 
 # Source the newly built workspace
 source install/setup.bash
-
+```
 
 ### Step 2: Launch MoveIt Servo
 This brings up the simulation environment, the controllers, and the MoveIt Servo node which handles the real-time Cartesian calculations.
 
 **Terminal 1 (Continued):**
-bash
+```bash
 ros2 launch manipulator1_moveit_servo2 servo.launch.py
-
+```
 *(Wait for RViz to fully load and the terminal output to settle.)*
 
 ### Step 3: Activate the Servo Controller
 By default, MoveIt Servo starts in a paused/sleeping state for safety. You must trigger a service call to wake it up and switch MoveIt from standard trajectory planning to real-time streaming control.
 
 **Terminal 2:**
-bash
+```bash
 source ~/ws_manipulator4/install/setup.bash
 ros2 service call /servo_node/start_servo std_srvs/srv/Trigger {}
-
+```
 *(You should see a `success=True` response in the terminal.)*
 
 ### Step 4: Run the Keyboard Bridge
@@ -57,19 +57,19 @@ The standard ROS 2 keyboard controller outputs a `geometry_msgs/Twist` message. 
 **What this bridge does:** It acts as a real-time translator. It listens to your keyboard inputs, attaches the current ROS clock timestamp, adds the `base_link` reference frame, and forwards the properly packaged data to the Servo node.
 
 **Terminal 3:**
-bash
+```bash
 source ~/ws_manipulator4/install/setup.bash
 python3 keyboard_bridge.py
-
+```
 
 ### Step 5: Run the Teleop Keyboard
 Finally, launch the node that will capture your keystrokes. 
 
 **Terminal 4:**
-bash
+```bash
 source /opt/ros/humble/setup.bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
-
+```
 
 ---
 
