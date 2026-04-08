@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: manipulator1
+    relative_path: urdf/manipulator1_without_bevel.urdf
+  srdf:
+    relative_path: config/manipulator1.srdf
+  package_settings:
+    author_name: satyajit
+    author_email: satyajitgr9@gmail.com
+    generated_timestamp: 1767895139
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

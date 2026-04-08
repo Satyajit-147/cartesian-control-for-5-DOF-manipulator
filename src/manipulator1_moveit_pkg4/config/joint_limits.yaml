@@ -1,0 +1,54 @@
+# joint_limits.yaml
+default_velocity_scaling_factor: 0.1
+default_acceleration_scaling_factor: 0.1
+
+joint_limits:
+  base_link_j_base_plate:
+    has_velocity_limits: true
+    max_velocity: 5.0
+    has_acceleration_limits: true
+    max_acceleration: 1.0
+  side_plate1_j_side_plate12:
+    has_velocity_limits: true
+    max_velocity: 1.0
+    has_acceleration_limits: true
+    max_acceleration: 1.0
+  motor_holder_j_side_plate_12:
+    has_velocity_limits: true
+    max_velocity: 1.0
+    has_acceleration_limits: true
+    max_acceleration: 1.0
+  link3_j_bevel1:
+    has_velocity_limits: true
+    max_velocity: 1.0
+    has_acceleration_limits: true
+    max_acceleration: 1.0
+  bevel1_j_bevel_coupler:
+    has_velocity_limits: true
+    max_velocity: 1.0
+    has_acceleration_limits: true
+    max_acceleration: 1.0
+    has_position_limits: true
+    min_position: -3.14159
+    max_position: 3.14159
+  bevel_coupler_j_bevel2:
+    has_velocity_limits: true
+    max_velocity: 1.0
+    has_acceleration_limits: true
+    max_acceleration: 1.0
+    has_position_limits: true
+    min_position: -3.14159
+    max_position: 3.14159
+  bevel_coupler_j_bevel3:
+    has_velocity_limits: true
+    max_velocity: 1.0
+    has_acceleration_limits: true
+    max_acceleration: 1.0
+    has_position_limits: true
+    min_position: -3.14159
+    max_position: 3.14159
+  servo_J_gl1:
+    has_velocity_limits: true
+    max_velocity: 1.0
+    has_acceleration_limits: true
+    max_acceleration: 1.0

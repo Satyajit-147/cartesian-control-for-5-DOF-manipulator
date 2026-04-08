@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'base_link_j_base_plate', 'side_plate1_j_side_plate12', 'motor_holder_j_side_plate_12', 'link3_j_bevel1', 'bevel_coupler_j_bevel3', 'servo_J_gl1', 'gl1_j_gl2', 'gl2_j_gl3', 'gl3_j_jaw_cover', 'gl1_j_gl2M', 'gl2M_j_gl3m', 'gl3M_j_jaw_cover_2', 'g_mainbody_j_gl4', 'gl4_j_jaw_cover1', 'g_main_body_j_gl4M', 'gl4M_jaw_cover2', ]

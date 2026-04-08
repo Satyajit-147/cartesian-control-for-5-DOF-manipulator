@@ -1,0 +1,33 @@
+###############################################
+# MoveIt Servo Configuration
+###############################################
+moveit_servo:
+  # Properties of incoming commands
+  cartesian_command_in_topic: ~/delta_twist_cmds
+  joint_command_in_topic: ~/delta_joint_cmds
+
+  # The Planning Group name
+  move_group_name: panda_arm  
+
+  # The Topic to publish commands to
+  command_out_topic: /servo_velocity_controller/commands
+
+  # "velocity" is best for smooth motion
+  command_out_type: std_msgs/Float64MultiArray 
+
+  # Publishing rate (Hz)
+  publish_period: 0.01
+
+  # COLLISION CHECKING
+  check_collisions: false
+  collision_check_rate: 10.0
+  collision_check_type: threshold_distance
+
+  # Safety & Scaling
+  scale:
+    linear:  0.4
+    rotational: 0.4
+    joint: 0.5
+
+  # Drift dimensions
+  drift_dimensions: [false, false, false, false, false, false]

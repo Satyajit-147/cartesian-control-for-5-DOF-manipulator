@@ -1,0 +1,49 @@
+###############################################
+# MoveIt Servo Configuration
+###############################################
+moveit_servo:
+  # Properties of incoming commands
+  cartesian_command_in_topic: ~/delta_twist_cmds
+  joint_command_in_topic: ~/delta_joint_cmds
+
+  # The Planning Group name
+  move_group_name: panda_arm
+
+  # 1. The Tip of your robot (You already fixed this)
+  ee_frame_name: link3
+
+  # 2. The Base of your robot (CHANGE THIS from panda_link0)
+  robot_link_command_frame: base_link
+
+  # 3. The Planning Frame (CHANGE THIS from panda_link0)
+  planning_frame: base_link
+
+  # The Topic to publish commands to
+  command_out_topic: /servo_velocity_controller/commands
+
+  # "velocity" is best for smooth motion
+  command_out_type: std_msgs/Float64MultiArray 
+
+  # --- THE MISSING PART THAT CAUSED THE CRASH ---
+  # You must explicitly tell Servo what the Float64 array contains:
+  publish_joint_positions: true
+  publish_joint_velocities: false
+  publish_joint_accelerations: false
+  # -----------------------------------------------
+
+  # Publishing rate (Hz)
+  publish_period: 0.01
+
+  # COLLISION CHECKING
+  check_collisions: false
+  collision_check_rate: 10.0
+  collision_check_type: threshold_distance
+
+  # Safety & Scaling
+  scale:
+    linear:  0.4
+    rotational: 0.4
+    joint: 0.5
+
+  # Drift dimensions (Allowed to drift in rotation for 3-DOF arm)
+  drift_dimensions: [false, false, false, false, false, false]

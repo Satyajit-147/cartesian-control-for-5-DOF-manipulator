@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="manipulator1_ros2_control" params="name initial_positions_file">
+    <xacro:property name="initial_positions" value="${load_yaml(initial_positions_file)['initial_positions']}"/>
+
+    <ros2_control name="${name}" type="system">
+      <hardware>
+        <plugin>mock_components/GenericSystem</plugin>
+      </hardware>
+
+      <joint name="base_link_j_base_plate">
+        <command_interface name="position"/>
+        <state_interface name="position">
+          <param name="initial_value">${initial_positions['base_link_j_base_plate']}</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="side_plate1_j_side_plate12">
+        <command_interface name="position"/>
+        <state_interface name="position">
+          <param name="initial_value">${initial_positions['side_plate1_j_side_plate12']}</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="motor_holder_j_side_plate_12">
+        <command_interface name="position"/>
+        <state_interface name="position">
+          <param name="initial_value">${initial_positions['motor_holder_j_side_plate_12']}</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="link3_j_bevel1">
+        <command_interface name="position"/>
+        <state_interface name="position">
+          <param name="initial_value">${initial_positions['link3_j_bevel1']}</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="bevel1_j_bevel_coupler">
+        <command_interface name="position"/>
+        <state_interface name="position">
+          <param name="initial_value">${initial_positions['bevel1_j_bevel_coupler']}</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="bevel_coupler_j_bevel3">
+        <command_interface name="position"/>
+        <state_interface name="position">
+          <param name="initial_value">${initial_positions['bevel_coupler_j_bevel3']}</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="servo_J_gl1">
+        <command_interface name="position"/>
+        <state_interface name="position">
+          <param name="initial_value">${initial_positions['servo_J_gl1']}</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="bevel_coupler_j_bevel2">
+        <command_interface name="position"/>
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="g_main_body_j_gl4M">
+        <command_interface name="position"/>
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="gl2M_j_gl3m">
+        <command_interface name="position"/>
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+      </joint>
+
+    </ros2_control>
+  </xacro:macro>
+</robot>

@@ -1,0 +1,30 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/satyajit/ws_moveit2/install/teleop_manip/lib/python3.10/site-packages",
+        "/home/satyajit/ws_moveit2/install/moveit_task_constructor_core/local/lib/python3.10/dist-packages",
+        "/home/satyajit/ws_moveit2/install/moveit_configs_utils/lib/python3.10/site-packages",
+        "/home/satyajit/ws_moveit2/install/srdfdom/local/lib/python3.10/dist-packages",
+        "/home/satyajit/ws_moveit2/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages",
+        "/home/satyajit/ws_moveit2/install/manip_teleop/lib/python3.10/site-packages",
+        "/home/satyajit/ws_moveit2/install/launch_param_builder/lib/python3.10/site-packages",
+        "/home/satyajit/hb_ws2/install/linkattacher_msgs/local/lib/python3.10/dist-packages",
+        "/home/satyajit/hb_ws2/install/hb_interfaces/local/lib/python3.10/dist-packages",
+        "/home/satyajit/four_wheel_ws/install/four_wheel_bot/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/satyajit/ws_moveit2/install/teleop_manip/lib/python3.10/site-packages",
+        "/home/satyajit/ws_moveit2/install/moveit_task_constructor_core/local/lib/python3.10/dist-packages",
+        "/home/satyajit/ws_moveit2/install/moveit_configs_utils/lib/python3.10/site-packages",
+        "/home/satyajit/ws_moveit2/install/srdfdom/local/lib/python3.10/dist-packages",
+        "/home/satyajit/ws_moveit2/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages",
+        "/home/satyajit/ws_moveit2/install/manip_teleop/lib/python3.10/site-packages",
+        "/home/satyajit/ws_moveit2/install/launch_param_builder/lib/python3.10/site-packages",
+        "/home/satyajit/hb_ws2/install/linkattacher_msgs/local/lib/python3.10/dist-packages",
+        "/home/satyajit/hb_ws2/install/hb_interfaces/local/lib/python3.10/dist-packages",
+        "/home/satyajit/four_wheel_ws/install/four_wheel_bot/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

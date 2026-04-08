@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="manipulator1">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-2.22044604925031E-16 -0.00224854905210781 4.44089209850063E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.139707136084498" />
+      <inertia
+        ixx="0.000407966760717312"
+        ixy="-2.98071223098969E-19"
+        ixz="2.52359462446658E-18"
+        iyy="0.000362153855961994"
+        iyz="6.68817379847048E-18"
+        izz="0.000769538503612287" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.96078431372549 0.96078431372549 0.964705882352941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="base_plate">
+    <inertial>
+      <origin
+        xyz="-1.22886286372248E-05 0 1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.0862820052494155" />
+      <inertia
+        ixx="0.000123802300064541"
+        ixy="1.06663922016303E-19"
+        ixz="8.84714563380274E-19"
+        iyy="0.000121470538062705"
+        iyz="2.03454754632287E-18"
+        izz="0.00024491332977204" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/base_plate.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/base_plate.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_link_j_base_plate"
+    type="revolute">
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="5.0"/>
+    <origin
+      xyz="0 0 0.015"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="base_plate" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="6.28"
+      effort="500"
+      velocity="5" />
+  </joint>
+  <link
+    name="plate_support">
+    <inertial>
+      <origin
+        xyz="4.44089209850063E-16 0.0599999999999996 9.42699875334796E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.20022424904567" />
+      <inertia
+        ixx="0.000252771572791514"
+        ixy="-4.18218020954489E-19"
+        ixz="1.13901000627266E-18"
+        iyy="0.000176249764770248"
+        iyz="4.112236499079E-18"
+        izz="0.00041080341734212" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/plate_support.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/plate_support.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="baseplate_j_plate_support"
+    type="fixed">
+    <origin
+      xyz="0.0195 -0.06 0.018179"
+      rpy="0 0 0" />
+    <parent
+      link="base_plate" />
+    <child
+      link="plate_support" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link1_side_plate1">
+    <inertial>
+      <origin
+        xyz="4.44089209850063E-16 0.0150134261644279 0.0554613514893123"
+        rpy="0 0 0" />
+      <mass
+        value="0.0682158367067577" />
+      <inertia
+        ixx="0.000205387282310402"
+        ixy="-5.49279557105901E-19"
+        ixz="-9.74556171742922E-19"
+        iyy="0.000126772358326724"
+        iyz="-1.08018754993082E-08"
+        izz="7.88991566366221E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link1_side_plate1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link1_side_plate1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plate_support_j_sideplate1"
+    type="fixed">
+    <origin
+      xyz="0.0485 0.045 -0.00067857"
+      rpy="0 0 0" />
+    <parent
+      link="plate_support" />
+    <child
+      link="link1_side_plate1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link1_side_plate12">
+    <inertial>
+      <origin
+        xyz="4.44089209850063E-16 4.44089209850063E-16 0.0310582864617434"
+        rpy="0 0 0" />
+      <mass
+        value="0.0499638320857503" />
+      <inertia
+        ixx="0.000167600746600551"
+        ixy="9.28776659826906E-21"
+        ixz="-1.33327816191701E-19"
+        iyy="0.000117287241228739"
+        iyz="-7.43091486371195E-19"
+        izz="5.05216880055031E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link1_side_plate12.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link1_side_plate12.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="side_plate1_j_side_plate12"
+    type="revolute">
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="5.0"/>
+    <origin
+      xyz="-0.03 0.015 0.08"
+      rpy="0 0 0" />
+    <parent
+      link="link1_side_plate1" />
+    <child
+      link="link1_side_plate12" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="500"
+      velocity="1" />
+  </joint>
+  <link
+    name="outer_shaft1">
+    <inertial>
+      <origin
+        xyz="-0.00772630874309455 4.44089209850063E-16 -1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.509143234421642" />
+      <inertia
+        ixx="0.00118267157071951"
+        ixy="2.14660790273393E-19"
+        ixz="-2.13692540459406E-19"
+        iyy="0.000788001513669385"
+        iyz="-2.07806932890846E-20"
+        izz="0.000788001513669385" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/outer_shaft1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/outer_shaft1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="side_plate12_j_outer_shaft1"
+    type="fixed">
+    <origin
+      xyz="-0.028 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link1_side_plate12" />
+    <child
+      link="outer_shaft1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link1_holder">
+    <inertial>
+      <origin
+        xyz="1.54143921293759E-07 -2.52144496393214E-08 -0.005799534584638"
+        rpy="0 0 0" />
+      <mass
+        value="0.0841346188443606" />
+      <inertia
+        ixx="6.47642859009133E-05"
+        ixy="8.23411710931886E-12"
+        ixz="-1.08890847202512E-11"
+        iyy="5.82653437006155E-05"
+        iyz="2.9352113029424E-12"
+        izz="0.000103444871427076" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link1_holder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link1_holder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="outer_shaft1_j_link1_holder"
+    type="fixed">
+    <origin
+      xyz="-0.0095001 0 0.076"
+      rpy="0 0 0" />
+    <parent
+      link="outer_shaft1" />
+    <child
+      link="link1_holder" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="2.61491217568022E-09 -1.96853406908559E-08 -1.68497195167649E-05"
+        rpy="0 0 0" />
+      <mass
+        value="1.16262072100795" />
+      <inertia
+        ixx="0.0294764673709808"
+        ixy="-7.58278885604543E-09"
+        ixz="3.71883808278725E-09"
+        iyy="0.0294766181912142"
+        iyz="5.34641410549775E-09"
+        izz="0.000654113236445879" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link1_holder_j_link1"
+    type="fixed">
+    <origin
+      xyz="0 0 0.26095"
+      rpy="0 0 0" />
+    <parent
+      link="link1_holder" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link1_end_part">
+    <inertial>
+      <origin
+        xyz="-1.74060011626231E-07 1.57060774164108E-07 0.00113323234783302"
+        rpy="0 0 0" />
+      <mass
+        value="0.171901132424438" />
+      <inertia
+        ixx="0.000147281829071962"
+        ixy="-2.17389957093923E-11"
+        ixz="-4.90680401859828E-10"
+        iyy="0.000200174484694879"
+        iyz="1.42730130731353E-09"
+        izz="0.000271952693993483" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link1_end_part.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link1_end_part.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link1_J_end_part"
+    type="fixed">
+    <origin
+      xyz="0 0 0.24912"
+      rpy="0 0 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link1_end_part" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link2_side_plate11">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-16 -0.000621912582690287 0.0311549842986414"
+        rpy="0 0 0" />
+      <mass
+        value="0.0528050348230078" />
+      <inertia
+        ixx="0.000126324772056133"
+        ixy="1.50694660718213E-20"
+        ixz="-5.54646076186613E-20"
+        iyy="9.4701438016944E-05"
+        iyz="1.25526676387361E-06"
+        izz="3.18433550176184E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link2_side_plate11.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link2_side_plate11.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="end_part_j_side_plate11"
+    type="fixed">
+    <origin
+      xyz="0.0455 0 0.015927"
+      rpy="0 0 0" />
+    <parent
+      link="link1_end_part" />
+    <child
+      link="link2_side_plate11" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="motor_holder">
+    <inertial>
+      <origin
+        xyz="-0.00584650550007593 -2.22044604925031E-16 -4.44089209850063E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.031956101125965" />
+      <inertia
+        ixx="1.46272579690827E-05"
+        ixy="-3.04094854525027E-22"
+        ixz="-1.34311000273746E-20"
+        iyy="8.61130071305443E-06"
+        iyz="2.56712386368993E-21"
+        izz="8.61130071305441E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/motor_holder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/motor_holder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link2_side_plate11_j_motor_holder"
+    type="fixed">
+    <origin
+      xyz="-0.00675 -0.0013172 0.065987"
+      rpy="0 0 0" />
+    <parent
+      link="link2_side_plate11" />
+    <child
+      link="motor_holder" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link2_side_plate_12">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-16 -0.039717131815086 -0.00491984724371952"
+        rpy="0 0 0" />
+      <mass
+        value="0.0287294522350535" />
+      <inertia
+        ixx="6.13941167735551E-05"
+        ixy="3.3920635179007E-20"
+        ixz="-6.2467002738095E-21"
+        iyy="1.74811605790006E-05"
+        iyz="-3.34024586969494E-06"
+        izz="4.40326622455339E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link2_side_plate_12.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link2_side_plate_12.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_holder_j_side_plate_12"
+    type="revolute">
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="5.0"/>
+    <origin
+      xyz="-0.01325 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="motor_holder" />
+    <child
+      link="link2_side_plate_12" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.1"
+      upper="1.57"
+      effort="500"
+      velocity="1" />
+  </joint>
+  <link
+    name="outer_shaft2">
+    <inertial>
+      <origin
+        xyz="-0.00185202704146603 -9.2405662460493E-05 6.41056320225264E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.136055116672961" />
+      <inertia
+        ixx="0.000202629151935712"
+        ixy="-4.64394915785094E-08"
+        ixz="3.22327908017919E-08"
+        iyy="0.000124866679772093"
+        iyz="-5.47298364929438E-06"
+        izz="0.000116146064523454" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/outer_shaft2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/outer_shaft2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link2_side_plate_j_outer_shaft2"
+    type="fixed">
+    <origin
+      xyz="-0.019951 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link2_side_plate_12" />
+    <child
+      link="outer_shaft2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link2_side_plate22">
+    <inertial>
+      <origin
+        xyz="3.33066907387547E-16 -0.0397171318150851 -0.00491984724371974"
+        rpy="0 0 0" />
+      <mass
+        value="0.0287294522350539" />
+      <inertia
+        ixx="6.13941167735567E-05"
+        ixy="1.26868156330376E-21"
+        ixz="-3.27976997977857E-20"
+        iyy="1.74811605790008E-05"
+        iyz="-3.34024586969501E-06"
+        izz="4.40326622455353E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link2_side_plate22.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link2_side_plate22.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="outer_shaft_j_side_plate22"
+    type="fixed">
+    <origin
+      xyz="-0.040049 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="outer_shaft2" />
+    <child
+      link="link2_side_plate22" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link2_holder">
+    <inertial>
+      <origin
+        xyz="2.0619170283398E-06 0.00813205255589899 0.0010073901871086"
+        rpy="0 0 0" />
+      <mass
+        value="0.0930218057872073" />
+      <inertia
+        ixx="8.39198156970618E-05"
+        ixy="-2.6718650837238E-09"
+        ixz="-1.77919164025414E-10"
+        iyy="9.05510577582414E-05"
+        iyz="4.13970788127066E-06"
+        izz="5.76455888171896E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link2_holder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link2_holder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="outer_shaft2_J_link2_holder"
+    type="fixed">
+    <origin
+      xyz="-0.01005 -0.070375 -0.0087174"
+      rpy="0 0 0" />
+    <parent
+      link="outer_shaft2" />
+    <child
+      link="link2_holder" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="3.32665672786447E-09 -6.24214728683903E-06 -7.73723946023708E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.738793048590476" />
+      <inertia
+        ixx="0.0125139162815572"
+        ixy="-2.37710463237503E-08"
+        ixz="1.91853538131335E-07"
+        iyy="0.000453023321934702"
+        iyz="-0.00149413526024665"
+        izz="0.0123298546752209" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link2_holder_j_link2"
+    type="fixed">
+    <origin
+      xyz="0 -0.19958 -0.024722"
+      rpy="0 0 0" />
+    <parent
+      link="link2_holder" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link3_holder">
+    <inertial>
+      <origin
+        xyz="-1.32817367659577E-07 -0.021143199221398 -0.00254036448894812"
+        rpy="0 0 0" />
+      <mass
+        value="0.188164299848226" />
+      <inertia
+        ixx="0.000263210682129164"
+        ixy="-1.24136411525225E-09"
+        ixz="-5.02555876414802E-11"
+        iyy="0.000219043978272138"
+        iyz="-1.13273894097352E-05"
+        izz="0.000310780367033102" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link3_holder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.768627450980392 0.207843137254902 0.152941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link3_holder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link2_j_link3_holder"
+    type="fixed">
+    <origin
+      xyz="0 -0.20401 -0.025271"
+      rpy="0 0 0" />
+    <parent
+      link="link2" />
+    <child
+      link="link3_holder" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="-0.0170000000959188 -0.0187763595650603 -0.00238682781019572"
+        rpy="0 0 0" />
+      <mass
+        value="0.199449879103002" />
+      <inertia
+        ixx="0.000445645399692473"
+        ixy="3.90013518644957E-12"
+        ixz="-3.30846133775281E-11"
+        iyy="0.000202127226065979"
+        iyz="-3.54670309739077E-05"
+        izz="0.000475268786200657" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.35" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator1/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link3_holder_j_link3"
+    type="fixed">
+    <origin
+      xyz="0.0175 -0.064892 -0.0080382"
+      rpy="0 0 0" />
+    <parent
+      link="link3_holder" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
